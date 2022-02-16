@@ -49,3 +49,18 @@
     </div>
   </div>
 </div>
+
+<div class="column-3-4">
+  <div class="user-questions buffer-both">
+    <div class="questions-list">
+      <div class="question">
+        <div class="question-content">
+          <div class="question-text text-lead">
+		       У вас <%= @questions.size %>
+		      <%= inclination(@questions.size, "вопрос", "вопроса", "вопросов") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
