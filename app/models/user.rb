@@ -11,6 +11,7 @@ class User < ApplicationRecord
 	validates :email, :username, uniqueness: true
 	validates :email, format: { with: /[\w-]+@\w+\.\w+/ }
 	validates :username, length: { maximum: 40 }, format: { with: /\A\w+\Z/ }
+	validates :background_color, format: { with: /\A#?([a-f0-9]{6}|[a-f0-9]{3})\z/ }
 
 	attr_accessor :password
 
@@ -18,7 +19,7 @@ class User < ApplicationRecord
 	validates_confirmation_of :password
 
 	before_save :encrypt_password
-	before_validation :word_to_downcase
+	before_validation :word_to_downcase, :user_color
 
 	  def word_to_downcase
 	  	username.downcase!
@@ -79,4 +80,8 @@ class User < ApplicationRecord
 	    nil
 	    
 	  end
+
+    def user_color
+      self.background_color = '#005a55' if background_color.nil?
+    end
 end
