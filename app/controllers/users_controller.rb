@@ -48,7 +48,8 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to root_url, notice: 'Пользователь удален'
+    
+    redirect_to users_path, notice: 'Пользователь удален'
   end
 
   private

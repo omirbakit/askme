@@ -54,7 +54,7 @@
     <% end %>
     
     <div class="form-action buffer-top">
-      <%= button_to "Удалить акаунт", @user, method: :delete, data: { confirm: "Are you sure?" }, class: 'button button-error button-small' %>
+      <%= link_to "Удалить акаунт", @user, method: :delete, data: { confirm: "Are you sure?" }, class: 'button button-error button-small' %>
     </div>
   </div>
 </div>
