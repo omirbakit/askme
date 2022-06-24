@@ -1,2 +1,4 @@
 class HashtagQuestion < ApplicationRecord
-end
+    belongs_to :hashtag
+    belongs_to :question
+end 
